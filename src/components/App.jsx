@@ -5,6 +5,7 @@ import Button from './Button/Button';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import { serviceSearch } from './Searchbar/Pixabay';
+import css from './App.module.css'
 
 export class App extends Component {
   state = {
@@ -70,7 +71,7 @@ export class App extends Component {
   };
 
   handleOpenModal = e => {
-    const currentImageId = Number(e.target.id);
+    const currentImageId = e.target.id;
     const currentItem = this.state.images.find(
       ({ id }) => id === currentImageId
     );
@@ -92,7 +93,7 @@ export class App extends Component {
     } = this.state;
 
     return (
-      <div>
+      <div className={css.main}>
         <Searchbar onSubmit={this.handleSearch} />
         {error && <p>{error}</p>}
         <ImageGallery items={images} openModal={this.handleOpenModal} />

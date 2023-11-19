@@ -4,7 +4,7 @@ const Modal = ({ item, onClose }) => {
     return (
       <div className={css.overlay} onClick={onClose}>
         <div className={css.modal}>
-          <img src={item ? item.webformatURL : ''} alt={item ? item.tags : ''} />
+          <img src={item.largeImageURL} alt={item.tags} />
         </div>
       </div>
     );
