@@ -86,6 +86,7 @@ export class App extends Component {
       isModalOpen,
       largeImageURL,
       error,
+      tags,
     } = this.state;
 
     return (
@@ -95,7 +96,7 @@ export class App extends Component {
         <ImageGallery items={images} openModal={this.handleOpenModal} />
         {isLoading && <Loader />}
         {isLoadMore && <Button onClick={this.handleLoadMore} />}
-        {isModalOpen && <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />}
+        {isModalOpen && <Modal largeImageURL={largeImageURL} tags={tags} onClose={this.closeModal} />}
       </div>
     );
   }
