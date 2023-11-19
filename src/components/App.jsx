@@ -88,7 +88,6 @@ export class App extends Component {
       isLoadMore,
       isModalOpen,
       currentItem,
-      isSearchDisabled,
       error,
     } = this.state;
 
