@@ -70,12 +70,8 @@ export class App extends Component {
     this.setState(prev => ({ page: prev.page + 1 }));
   };
 
-  handleOpenModal = e => {
-    const currentImageId = e.target.id;
-    const currentItem = this.state.images.find(
-      ({ id }) => id === currentImageId
-    );
-    this.setState({ currentItem, isModalOpen: true });
+  handleOpenModal = largeImageURL=> {
+    this.setState({ largeImageURL, isModalOpen: true });
   };
 
   closeModal = () => {
@@ -88,7 +84,7 @@ export class App extends Component {
       isLoading,
       isLoadMore,
       isModalOpen,
-      currentItem,
+      largeImageURL,
       error,
     } = this.state;
 
@@ -99,7 +95,7 @@ export class App extends Component {
         <ImageGallery items={images} openModal={this.handleOpenModal} />
         {isLoading && <Loader />}
         {isLoadMore && <Button onClick={this.handleLoadMore} />}
-        {isModalOpen && <Modal item={currentItem} onClose={this.closeModal} />}
+        {isModalOpen && <Modal largeImageURL={largeImageURL} onClose={this.closeModal} />}
       </div>
     );
   }

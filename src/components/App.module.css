@@ -4,3 +4,8 @@
   grid-gap: 16px;
   padding-bottom: 24px;
 }
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+}
